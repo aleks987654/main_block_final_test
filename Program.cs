@@ -48,12 +48,23 @@ void PrintArray(string[] array)
     Console.WriteLine();
 }
 
+// ********** Тело программы **********
 
-// string[] str_array = ["Hello", "2", "world", ":-)"];
+Console.WriteLine();
+Console.WriteLine("ПРИМЕР 1");
 Console.WriteLine("Исходный массив:");
 PrintArray(["Hello", "2", "world", ":-)"]);
 
 string[] res = Array3SymbolsElements(["Hello", "2", "world", ":-)"]);
+Console.WriteLine("Массив элементов, состоящих из 3 либо менее символов:");
+PrintArray(res);
+
+Console.WriteLine();
+Console.WriteLine("ПРИМЕР 2");
+Console.WriteLine("Исходный массив:");
+PrintArray(["1234", "1567", "-2", "computer science"]);
+
+res = Array3SymbolsElements(["1234", "1567", "-2", "computer science"]);
 Console.WriteLine("Массив элементов, состоящих из 3 либо менее символов:");
 PrintArray(res);
 
