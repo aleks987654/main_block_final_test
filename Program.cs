@@ -41,6 +41,11 @@ string[] Array3SymbolsElements(string[] array)
 // Функция вывода элементов массива на консоль
 void PrintArray(string[] array)
 {
+    if (array.Length == 0) 
+    {
+        Console.WriteLine("нет элементов, удовлетворяющих условию");
+        return;
+    }
     foreach (var e in array)
     {
         Console.Write($"'{e}' ");
@@ -48,23 +53,21 @@ void PrintArray(string[] array)
     Console.WriteLine();
 }
 
+// Функция поэтапного вывода операций с массивом
+void Processing(string[] array, int ex_n)
+{
+    Console.WriteLine();
+    Console.WriteLine($"ПРИМЕР {ex_n}");
+
+    Console.WriteLine("Массив:");
+    PrintArray(array);
+
+    Console.WriteLine("Элементы массива, состоящие из 3 либо менее символов:");
+    PrintArray(Array3SymbolsElements(array));
+}
+
 // ********** Тело программы **********
 
-Console.WriteLine();
-Console.WriteLine("ПРИМЕР 1");
-Console.WriteLine("Исходный массив:");
-PrintArray(["Hello", "2", "world", ":-)"]);
-
-string[] res = Array3SymbolsElements(["Hello", "2", "world", ":-)"]);
-Console.WriteLine("Массив элементов, состоящих из 3 либо менее символов:");
-PrintArray(res);
-
-Console.WriteLine();
-Console.WriteLine("ПРИМЕР 2");
-Console.WriteLine("Исходный массив:");
-PrintArray(["1234", "1567", "-2", "computer science"]);
-
-res = Array3SymbolsElements(["1234", "1567", "-2", "computer science"]);
-Console.WriteLine("Массив элементов, состоящих из 3 либо менее символов:");
-PrintArray(res);
-
+Processing(["Hello", "2", "world", ":-)"], 1);
+Processing(["1234", "1567", "-2", "computer science"], 2);
+Processing(["Russia", "Denmark", "Kazan"], 3);
